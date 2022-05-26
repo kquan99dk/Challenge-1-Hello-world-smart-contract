@@ -1,19 +1,10 @@
-const CONTRACT_NAME = 'dev-1653401953105-94644648866111'
+const CONTRACT_NAME = process.env.VUE_APP_CONTRACT_NAME ||'HelloWorld'
 // const CONTRACT_NAME = 'testnet'
 
 function getConfig(env) {
   switch (env) {
 
     case 'production':
-    case 'testnet':
-      return {
-        networkId: 'testnet',
-        nodeUrl: 'https://rpc.testnet.near.org',
-        contractName: CONTRACT_NAME,
-        walletUrl: 'https://wallet.testnet.near.org',
-        helperUrl: 'https://helper.testnet.near.org',
-        explorerUrl: 'https://explorer.testnet.near.org',
-      }
     case 'mainnet':
       return {
         networkId: 'mainnet',
@@ -24,6 +15,15 @@ function getConfig(env) {
         explorerUrl: 'https://explorer.mainnet.near.org',
       }
     case 'development':
+    case 'testnet':
+      return {
+        networkId: 'testnet',
+        nodeUrl: 'https://rpc.testnet.near.org',
+        contractName: CONTRACT_NAME,
+        walletUrl: 'https://wallet.testnet.near.org',
+        helperUrl: 'https://helper.testnet.near.org',
+        explorerUrl: 'https://explorer.testnet.near.org',
+      }
     case 'betanet':
       return {
         networkId: 'betanet',
