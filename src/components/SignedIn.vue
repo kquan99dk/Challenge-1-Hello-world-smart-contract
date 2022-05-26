@@ -1,82 +1,44 @@
 <template>
   <div>
-    <button class="link" style="float: right" v-on:click="logout">Sign out</button>
+    <div style="float: right">
+      <div style="display: flex; align-items: center;">
+        <img style="width: 30px; margin-right: 5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/2048px-User_font_awesome.svg.png" alt="">
+        <span style="margin-right: 15px;">{{ accountId }}</span>
+        <button class="btn-signout" v-on:click="logout">Sign out</button>
+      </div>
+    </div>
+    
     <main>
-      <h1>
-        <label
-          for="greeting"
-          style="color: var(--secondary);border-bottom: 2px solid var(--secondary);"
-        >{{ savedGreeting }}</label>
-        {{ accountId }}
-      </h1>
+      <div class="logoNear">
+        <img class="logoNear-img" src="https://s3-us-west-1.amazonaws.com/compliance-ico-af-us-west-1/production/token_profiles/logos/original/9d5/c43/cc-/9d5c43cc-e232-4267-aa8a-8c654a55db2d-1608222929-b90bbe4696613e2faeb17d48ac3aa7ba6a83674a.png" alt="">
+      </div>
+      <h3 style="text-align: center;">Welcome to the App Near</h3>
+      <div style="margin-top: 30px">
+        <p style="margin-bottom: 0;text-align: center;font-size: 50px">Hello <b>{{ savedGreeting }}</b></p>
+      </div>
       <form v-on:submit.prevent="saveGreeting">
         <fieldset ref="fieldset">
           <label
             for="greeting"
             style="display:block; color:var(--gray);margin-bottom:0.5em;"
-          >Change greeting</label>
-          <div style="display:flex">
+          >Type Your Name</label>
+          <!-- <div style="display:flex">
             <input v-model="newGreeting" autocomplete="off" id="greeting" style="flex:1" />
             <button id="save" style="border-radius:0 5px 5px 0">Save</button>
+          </div> -->
+          <div style="display: flex; flex-direction: column; align-items: center">
+            <input v-model="newGreeting" autocomplete="off" id="greeting" style="width: 100%; border-radius: 8px;height: 50px;" />
+            <button style="border-radius:15px; margin-top: 10px; padding:10px 50px;">Save</button>
           </div>
         </fieldset>
       </form>
-      <p>Look at that! A Hello World app! This greeting is stored on the NEAR blockchain. Check it out:</p>
-      <ol>
-        <li>
-          Look in
-          <code>src/App.vue</code> and
-          <code>src/utils.js</code>
-          - you'll see
-          <code>get_greeting</code>
-          and
-          <code>set_greeting</code> being called on
-          <code>contract</code>. What's this?
-        </li>
-        <li>
-          Ultimately, this
-          <code>contract</code> code is defined in
-          <code>assembly/main.ts</code>
-          - this is the source code for your
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://docs.near.org/docs/develop/contracts/overview"
-          >smart contract</a>.
-        </li>
-        <li>
-          When you run
-          <code>npm run dev</code> or
-          <code>yarn dev</code>, the code in
-          <code>assembly/main.ts</code>
-          gets deployed to the NEAR testnet. You can see how this happens by looking in
-          <code>package.json</code>
-          at the
-          <code>scripts</code> section to find the
-          <code>dev</code> command.
-        </li>
-      </ol>
-      <hr />
-      <p>
-        To keep learning, check out
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://docs.near.org"
-        >the NEAR docs</a> or look through some
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://examples.near.org"
-        >example apps</a>.
-      </p>
     </main>
 
     <Notification
       v-show="notificationVisible"
       ref="notification"
       :networkId="networkId"
-      :msg="'called method: set_greeting'"
+      :msg="'User App Near Hello World'"
       :contractId="contractId"
       :visible="false"
     />
@@ -177,3 +139,19 @@ export default {
   },
 }
 </script>
+<style scoped>
+.btn-signout{
+  padding:10px 50px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+.logoNear{
+  display: flex;
+  justify-content: center;
+}
+.logoNear-img{
+  width: 150px;
+  margin: auto;
+}
+</style>

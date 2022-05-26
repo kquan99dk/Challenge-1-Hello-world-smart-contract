@@ -1,34 +1,54 @@
 <template>
-  <main>
-    <h1>Welcome to NEAR!</h1>
-    <p>
-      To make use of the NEAR blockchain, you need to sign in. The button
-      below will sign you in using NEAR Wallet.
-    </p>
-    <p>
-      By default, when your app runs in "development" mode, it connects
-      to a test network ("testnet") wallet. This works just like the main
-      network ("mainnet") wallet, but the NEAR Tokens on testnet aren't
-      convertible to other currencies - they're just for testing!
-    </p>
-    <p>Go ahead and click the button below to try it out:</p>
-    <p style="text-align:center; margin-top:2.5em">
+  <div class="form-signout">
+    <img src="https://s3-us-west-1.amazonaws.com/compliance-ico-af-us-west-1/production/token_profiles/logos/original/9d5/c43/cc-/9d5c43cc-e232-4267-aa8a-8c654a55db2d-1608222929-b90bbe4696613e2faeb17d48ac3aa7ba6a83674a.png" alt="">
+    <span>Hello World</span>
+    <p style="text-align: center; margin-top: 2.5em">
       <button v-on:click="login">Sign in</button>
     </p>
-  </main>
+  </div>
 </template>
 
 <script>
-import { login } from "../utils"
+import { login } from "../utils";
 
 export default {
   name: "SignedOut",
 
   methods: {
     login() {
-      console.log("calling utils.login")
-      login()
+      console.log("calling utils.login");
+      login();
     },
   },
-}
+};
 </script>
+<style scoped>
+.form-signout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px !important;
+  width: 400px;
+  height: 500px;
+  padding: 30px;
+  background-color: #fff;
+  margin: auto;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+img{
+  width: 150px;
+}
+span{
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+button{
+  padding:10px 50px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+</style>
