@@ -11,7 +11,7 @@ import getConfig from "./config"
 import SignedOut from "./components/SignedOut.vue"
 import SignedIn from "./components/SignedIn.vue"
 
-const nearConfig = getConfig("development")
+const nearConfig = getConfig("testnet")
 console.log(
   `networkId:${nearConfig.networkId} CONTRACT_NAME:${nearConfig.contractName}`
 )
