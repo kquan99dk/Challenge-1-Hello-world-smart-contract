@@ -70,7 +70,10 @@ export default {
       notificationVisible: false,
     }
   },
-
+  created() {
+    // eslint-disable-next-line no-undef
+    console.log('kkkkkkkkkkkk', process.env.VUE_APP_CONTRACT_NAME);
+  },
   computed: {
     isSignedIn() {
       return window.walletConnection? window.walletConnection.isSignedIn(): false
