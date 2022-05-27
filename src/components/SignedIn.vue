@@ -12,7 +12,7 @@
       <div class="logoNear">
         <img class="logoNear-img" src="https://s3-us-west-1.amazonaws.com/compliance-ico-af-us-west-1/production/token_profiles/logos/original/9d5/c43/cc-/9d5c43cc-e232-4267-aa8a-8c654a55db2d-1608222929-b90bbe4696613e2faeb17d48ac3aa7ba6a83674a.png" alt="">
       </div>
-      <h3 style="text-align: center;">Welcome to the App Near</h3>
+      <h3 style="text-align: center;">Welcome to the Near App</h3>
       <div style="margin-top: 30px">
         <p style="margin-bottom: 0;text-align: center;font-size: 50px">Hello <b>{{ savedGreeting }}</b></p>
       </div>
@@ -20,15 +20,15 @@
         <fieldset ref="fieldset">
           <label
             for="greeting"
-            style="display:block; color:var(--gray);margin-bottom:0.5em;"
-          >Type Your Name</label>
+            style="display:block; color:black;margin-bottom:0.5em;"
+          >Make a greeting</label>
           <!-- <div style="display:flex">
             <input v-model="newGreeting" autocomplete="off" id="greeting" style="flex:1" />
             <button id="save" style="border-radius:0 5px 5px 0">Save</button>
           </div> -->
           <div style="display: flex; flex-direction: column; align-items: center">
-            <input v-model="newGreeting" autocomplete="off" id="greeting" style="width: 100%; border-radius: 8px;height: 50px;" />
-            <button style="border-radius:15px; margin-top: 10px; padding:10px 50px;">Save</button>
+            <input v-model="newGreeting" placeholder="Type your name" autocomplete="off" id="greeting" style="width: 100%; border-radius: 8px;height: 50px;" />
+            <button style="border-radius:15px; margin-top: 10px; padding:10px 50px;background:rgb(174, 136, 11);">Save</button>
           </div>
         </fieldset>
       </form>
@@ -95,8 +95,9 @@ export default {
       window.contract
         .get_greeting({ account_id: window.accountId })
         .then((greetingFromContract) => {
-          this.savedGreeting = greetingFromContract
-          this.newGreeting = greetingFromContract
+          console.log('retrieveSavedGreeting', greetingFromContract);
+          this.savedGreeting = ''
+          this.newGreeting = ''
         })
     },
 
@@ -145,7 +146,7 @@ export default {
 <style scoped>
 .btn-signout{
   padding:10px 50px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 10px;
 }
