@@ -6,7 +6,7 @@
     "build": "npm run build:web",
     "build:contract": "node contract/compile.js",
     "build:contract:debug": "node contract/compile.js --debug",
-    "build:web": "vue-cli-service build",
+    "build:web": "node copy-dev-account.js && vue-cli-service build",
     "dev:deploy:contract": "near dev-deploy",
     "deploy:contract": "near deploy",
     "deploy:pages": "gh-pages -d dist/",
@@ -16,7 +16,7 @@
     "dev": "nodemon --watch contract/src -e rs --exec \"npm run start\"",
     "test:web": "vue-cli-service test:unit",
     "test": "npm run build:contract:debug && cd contract && cargo test -- --nocapture && cd .. && vue-cli-service test:unit",
-    "serve": "vue-cli-service serve --open",
+    "serve": "node copy-dev-account.js && vue-cli-service serve --open",
     "lint": "eslint . --ext .js --ext .vue --fix"
   },
   "dependencies": {

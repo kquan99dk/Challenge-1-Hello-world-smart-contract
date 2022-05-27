@@ -72,7 +72,7 @@ export default {
   },
   created() {
     // eslint-disable-next-line no-undef
-    console.log('kkkkkkkkkkkk', process.env.VUE_APP_CONTRACT_NAME);
+    // console.log('kkkkkkkkkkkk', process.env.VUE_APP_CONTRACT_NAME);
   },
   computed: {
     isSignedIn() {
