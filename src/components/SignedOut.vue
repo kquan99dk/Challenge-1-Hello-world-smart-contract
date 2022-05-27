@@ -1,7 +1,8 @@
 <template>
   <div class="form-signout">
     <img src="https://s3-us-west-1.amazonaws.com/compliance-ico-af-us-west-1/production/token_profiles/logos/original/9d5/c43/cc-/9d5c43cc-e232-4267-aa8a-8c654a55db2d-1608222929-b90bbe4696613e2faeb17d48ac3aa7ba6a83674a.png" alt="">
-    <span>Hello World</span>
+    <span style="color:black;">Hello World</span>
+    <img src="https://images.squarespace-cdn.com/content/5b33c1c8620b8581cba04f0f/1530120246289-BASP0F0S5MBELBUHCOA2/93246a_917907056a344f42b24bf8a2524936a0_mv2.gif?content-type=image%2Fgif" alt="">
     <p style="text-align: center; margin-top: 2.5em">
       <button v-on:click="login">Sign in</button>
     </p>
