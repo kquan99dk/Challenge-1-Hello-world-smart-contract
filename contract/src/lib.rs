@@ -51,7 +51,7 @@ impl Welcome {
     pub fn get_greeting(&self, account_id: String) -> String {
         match self.records.get(&account_id) {
             Some(greeting) => greeting,
-            None => "".to_string(),
+            None => "Hello".to_string(),
         }
     }
 }
@@ -114,7 +114,7 @@ mod tests {
         let contract = Welcome::default();
         // this test did not call set_greeting so should return the default "Hello" greeting
         assert_eq!(
-            "".to_string(),
+            "Hello".to_string(),
             contract.get_greeting("francis.near".to_string())
         );
     }
