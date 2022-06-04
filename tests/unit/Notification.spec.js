@@ -11,7 +11,6 @@ describe('Notification.vue Test', () => {
       }
     })
 
-    console.log(wrapper.text())
 
     //check msg prop
     expect(wrapper.props("msg")).toMatch('Test Message')

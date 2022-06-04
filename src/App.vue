@@ -12,9 +12,6 @@ import SignedOut from "./components/SignedOut.vue"
 import SignedIn from "./components/SignedIn.vue"
 
 const nearConfig = getConfig('production')
-// console.log(
-//   `networkId:${nearConfig.networkId} CONTRACT_NAME:${nearConfig.contractName}`
-// )
 window.networkId = nearConfig.networkId
 
 export default {
